@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Converter</title>
+  </head>
+  <body>
+    <div class="converter-container">
+      <div class="converter-options-wrapper">
+        <select name="" id="converter-select-option" class="converter-select">
+          <option value="text" class="converter-select-option">Text</option>
+          <option value="numbers" class="converter-select-option">
+            Numbers
+          </option>
+        </select>
+      </div>
+      <div class="converter-body">
+        <div class="converter-text-field-wrapper">
+          <textarea
+            name="text-field-one"
+            id="text-field-one"
+            class="converter-text-field"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div class="converter-text-field-wrapper">
+          <textarea
+            name="text-field-two"
+            id="text-field-two"
+            class="converter-text-field"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <div class="choose-type-wrapper">
+            <div class="option">
+              <input type="radio" id="latin" name="script-type" />
+              <label for="latin">Latin</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="cyrillic" name="script-type" />
+              <label for="cyrillic">Cyrillic</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
