@@ -1,13 +1,26 @@
-import { toWord, toLatin, toCyrillic } from "kaalin";
+import { latinToCyrillic, cyrillicToLatin } from "kaalin";
 
-const kaa = toLatin("BÁHÁR");
+const converterSelectOption = document.getElementById(
+  "converter-select-option"
+);
+const textFieldOne = document.getElementById("text-field-one");
+const textFieldTwo = document.getElementById("text-field-two");
+const latinRadio = document.getElementById("latin");
+const cyrillicRadio = document.getElementById("cyrillic");
 
-console.log(kaa.upper()); // BÁHÁR
-console.log(kaa.lower()); // báhár
-console.log(kaa.isUpper()); // true
-console.log(kaa.isLower()); // false
-console.log(kaa.isAlpha()); // true
-console.log(kaa.isDigit()); // false
+latinRadio.checked = true;
 
-console.log(toWord(533_525)); // bes júz otız úsh mıń bes júz jigirma bes
-console.log(toWord(894_236_671)); // segiz júz toqsan tórt million eki júz otız altı mıń altı júz jetpis bir
+const converText = () => {
+  const text = textFieldOne.value;
+
+  if (latinRadio.checked) {
+    textFieldTwo.value = cyrillicToLatin(text);
+  } else if (cyrillicRadio.checked) {
+    textFieldTwo.value = latinToCyrillic(text);
+  }
+};
+
+textFieldOne.addEventListener("input", converText);
+textFieldTwo.addEventListener("input", converText);
+cyrillicRadio.addEventListener("change", converText);
+latinRadio.addEventListener("change", converText);
